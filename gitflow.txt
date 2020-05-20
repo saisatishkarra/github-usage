@@ -1,0 +1,6 @@
+merge
+
+rebase and merge
+
+
+squash and merge
