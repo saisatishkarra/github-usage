@@ -8,23 +8,20 @@ Demo the github-usage workflows
 ### Dataguise SaaS Use-Case
 1. We have a SaaS product with multiple versions for use in production for different customers and we would pick **gitflow** VS **one-flow** , **gitlab-flow**, **github-flow** , **gitflow**
 
-### Git flow:
-1. master — this branch contains production code. All development code is merged into master in sometime.
-2. develop — this branch contains pre-production code. When the features are finished then they are merged into develop.
-During the development cycle, a variety of supporting branches are used:
-3. feature-* — feature branches are used to develop new features for the upcoming releases. May branch off from develop and must merge into develop.
-4. hotfix-* — hotfix branches are necessary to act immediately upon an undesired status of master. May branch off from master and must merge into master anddevelop.
-5. release-* — release branches support preparation of a new production release. They allow many minor bug to be fixed and preparation of meta-data for a release. May branch off from develop and must merge into master anddevelop.
+### One Flow
 
-Advantages:
+### Get-To-Know:
+1. Master is the mainstream branch for production directly or via use of tags/releases.
+2. Naming conventions should be either feature/<name_of_feature> , bugfix/<bug_fix_description>, hotfix/<hotfix_description>, release/<version-number>
+3. Bug Fixes are considered as features
+4. Releases can be code freezes, producing Release Candidates, and having a full QA process that branch off from master using tags and doesn't always start from tip of master. Starts from a stable version within master.
 
-Ensures a clean state of branches at any given moment in the life cycle of project
-The branches naming follows a systematic pattern making it easier to comprehend
-It has extensions and support on most used git tools
-It is ideal when there it needs to be multiple version in production
+    ```
+    git checkout development
 
-Disadvantages:
+    git checkout -b release/2.3.0 <stable-commit-hash>
+    ```
+5. Hotfix branches are cut from the commit that the latest release version tag points to.    
+    ```
 
-The Git history becomes unreadable
-The master/develop split is considered redundant and makes the Continuous Delivery and the Continuos Integration harder
-It isn’t recommended when it need to maintain single version in production
+    ```
