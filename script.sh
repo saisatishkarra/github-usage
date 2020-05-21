@@ -1,3 +1,4 @@
 #!/bin/bash
 
-echo "first script commit in feature 1"
+echo "hello"
+echo "script in feature 2"
